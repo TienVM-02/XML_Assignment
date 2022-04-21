@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plantList>
+    <plants>
+        <plant id="0">
+            <name>rau maqq</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>RM01</cateId>
+        </plant>
+        <plant id="1">
+            <name>rau muong</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>RM01</cateId>
+        </plant>
+        <plant id="2">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="3">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="4">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="5">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="6">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="7">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="8">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="9">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="10">
+            <name>hoa sen</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>CK01</cateId>
+        </plant>
+        <plant id="11">
+            <name>sen da</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>CK01</cateId>
+        </plant>
+        <plant id="12">
+            <name>mit thai</name>
+            <price>20.5</price>
+            <description>Mit thai thom ngon</description>
+            <createDate>2022-06-11</createDate>
+            <cateId>CK01</cateId>
+        </plant>
+    </plants>
+    <categories>
+        <category cateId="AT01">
+            <name>Cay an trai </name>
+        </category>
+        <category cateId="CK01">
+            <name>Cay kieng </name>
+        </category>
+        <category cateId="RM01">
+            <name>Rau mau </name>
+        </category>
+    </categories>
+</plantList>

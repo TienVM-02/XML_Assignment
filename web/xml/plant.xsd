@@ -1,0 +1,88 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="plantList">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="plants">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="plant" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="name">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:pattern value="([a-zA-Z 0-9])*"/>
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="price">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                       <xs:whiteSpace value="collapse" fixed="true"/>
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="description">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:minLength value="0"/>
+                                       <xs:maxLength value="200"/>
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="createDate" type="xs:date"/>
+                              <xs:element name="cateId">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:enumeration value="AT01"/>
+                                       <xs:enumeration value="RM01"/>
+                                       <xs:enumeration value="CK01"/>
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="id" use="optional">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:maxInclusive value="2999"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:attribute>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+            <xs:element name="categories">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="category" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="name">
+                                 <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                       <xs:pattern value="([a-zA-Z ])*"/>
+                                    </xs:restriction>
+                                 </xs:simpleType>
+                              </xs:element>
+                           </xs:sequence>
+                           <xs:attribute name="cateId" use="optional">
+                              <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                    <xs:enumeration value="AT01"/>
+                                    <xs:enumeration value="RM01"/>
+                                    <xs:enumeration value="CK01"/>
+                                 </xs:restriction>
+                              </xs:simpleType>
+                           </xs:attribute>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
