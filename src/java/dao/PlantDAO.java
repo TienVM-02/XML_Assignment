@@ -91,25 +91,25 @@ public class PlantDAO {
 
                     String id = element.getAttribute("id");
                     Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                    String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                     String description = element.getElementsByTagName("description").item(0).getTextContent();
+                    String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                     plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
 
                 } else if (idCategory.equals(category)) {
                     String name = element.getElementsByTagName("name").item(0).getTextContent();
 
-                    if (name.indexOf(filter) > 0) {
+                    if (name.indexOf(filter) >= 0) {
                         String id = element.getAttribute("id");
                         Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         String description = element.getElementsByTagName("description").item(0).getTextContent();
+                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
                     }
                     if (filter == "") {
                         String id = element.getAttribute("id");
                         Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         String description = element.getElementsByTagName("description").item(0).getTextContent();
+                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
                     }
                 }

@@ -1,29 +1,49 @@
-<%-- 
-    Document   : index
-    Created on : Apr 19, 2022, 8:25:22 PM
-    Author     : vomin
---%>
+<!DOCTYPE html>
 
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Plant</title>
+        <!--<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
+
     <body>
-        <form method="post" action="MainControler">
-            <input type="submit" name="btnAction" value="Generate Data" />
-        </form>
-        <div style="margin-top: 10px">
-                <form method="post" action="CheckDataControler" enctype="multipart/form-data">
-                    <input name="data" type="file" />
-                    <input type="submit" name="btnAction" value="Check Data" />
-                </form>
+        <div class="header">
+            <p class="title">Plant Management</p>
         </div>
-        <div style="margin-top: 10px">
-                <form method="get" action="MainControler">
-                    <input type="submit" name="btnAction" value="LoadProduct" />
-                </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="centerBtn">
+                        <p class="task">Menu</p>
+
+                        <form method="post" action="MainControler">
+                            <input type="submit" name="btnAction" value="Generate Data" />
+                        </form>
+                        <div>
+                            <form method="post" action="CheckDataControler" enctype="multipart/form-data">
+                                <input class="upFile" name="data" type="file" />
+                                <input type="submit" name="btnAction" value="Check Data" />
+                                <p style="color: green; font-size: 18px">
+                                    ${requestScope.SUCCESS}
+                                </p>
+                                <p style="color: red; font-size: 18px">
+                                    ${requestScope.FAIL}
+                                </p>
+                            </form>
+                        </div>
+                        <div style="margin-top: 10px">
+                            <form method="get" action="MainControler">
+                                <input type="submit" name="btnAction" value="LoadProduct" />
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </body>
+
 </html>
