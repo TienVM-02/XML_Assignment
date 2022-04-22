@@ -3,17 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/web/index.jsp</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/controler/MainControler.java</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/controler/LoadPlantControler.java</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/dao/PlantDAO.java</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/controler/DownloadControler.java</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/web/index.html</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/web/loadPlant.jsp</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/ultil/Main.java</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/web/js/dataTable.js</file>
-            <file>file:/C:/Users/TienVM/Downloads/Assisgment_XML_fixversion/src/java/dto/plantDTO.java</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/src/java/dao/PlantDAO.java</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/web/css/style.css</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/web/index.jsp</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/web/loadPlant.jsp</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/web/home.html</file>
+            <file>file:/D:/CN7_Block3w/PRX301/XML_Assignment/web/index.html</file>
         </group>
     </open-files>
 </project-private>

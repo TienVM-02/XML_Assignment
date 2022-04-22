@@ -27,8 +27,8 @@ import org.xml.sax.SAXException;
  *
  * @author pc
  */
-@WebServlet(name = "AddnewPlantControler", urlPatterns = {"/AddnewPlantControler"})
-public class AddnewPlantControler extends HttpServlet {
+@WebServlet(name = "AddNewPlantControler", urlPatterns = {"/AddNewPlantControler"})
+public class AddNewPlantControler extends HttpServlet {
          private final String LOAD_DATA = "LoadPlantControler";
     private final String ERROR_PAGE = "error.jsp";
     private final String NEW_PLANT_PAGE = "newplant.jsp";
@@ -66,7 +66,7 @@ public class AddnewPlantControler extends HttpServlet {
             try {
                 dao.newPlant(xmlPath, dto);
             } catch (TransformerException ex) {
-                Logger.getLogger(AddnewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
             }
                 url = NEW_PLANT_PAGE;
                 request.setAttribute("Success","Update success");
@@ -96,9 +96,9 @@ public class AddnewPlantControler extends HttpServlet {
              try {
                  processRequest(request, response);
              } catch (ParserConfigurationException ex) {
-                 Logger.getLogger(AddnewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SAXException ex) {
-                 Logger.getLogger(AddnewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
              }
     }
 
@@ -116,9 +116,9 @@ public class AddnewPlantControler extends HttpServlet {
              try {
                  processRequest(request, response);
              } catch (ParserConfigurationException ex) {
-                 Logger.getLogger(AddnewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SAXException ex) {
-                 Logger.getLogger(AddnewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
              }
     }
 

@@ -45,15 +45,16 @@ type="text/javascript"></script>
                             <select class="option" name="idCategory">
                                 <c:forEach var="category" items="${categories}">
                                     <c:if test="${requestScope.idCategory eq category.id}">
-                                        <option selected value="${category.id}">${category.id}</option>
+                                        <option selected value="${category.id}">${category.name}</option>
                                     </c:if>
                                     <c:if test="${requestScope.idCategory != category.id}">
-                                        <option value="${category.id}">${category.id}</option>
+                                        <option value="${category.id}">${category.name}</option>
                                     </c:if>
                                 </c:forEach>
                             </select>
                             <button class="btnSearch" name="btnAction" value="search">Search</button>
-                            <button class="btnAdd" name="btnAdd" value="addnew">Add +</button>
+                            <button class="btnAdd" name="btnAction" value="CreatePage">Add +</button>
+                            <!--<a href="MainControler?btnAction=CreatePage">Add New</a>-->
                         </form>
                     </div>
                     <!--<a href="MainControler?btnAction=addNew">Add New</a>-->

@@ -35,10 +35,11 @@ import ultil.Main;
 @WebServlet(name = "CheckDataControler", urlPatterns = {"/CheckDataControler"})
 @MultipartConfig
 public class CheckDataControler extends HttpServlet {
+
     private final String INDEX_PAGE = "index.html";
     private final String ERROR_PAGE = "error.html";
-    private final String CHECK_FILE_FAIL_PAGE = "failed.jsp";
-    private final String CHECK_FILE_SUCCESS_PAGE = "thanhcong.jsp";
+    private final String CHECK_FILE_FAIL_PAGE = "index.jsp";
+    private final String CHECK_FILE_SUCCESS_PAGE = "index.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -52,32 +53,33 @@ public class CheckDataControler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SAXException {
         response.setContentType("text/html;charset=UTF-8");
-         String url = CHECK_FILE_FAIL_PAGE;
+        String url = CHECK_FILE_FAIL_PAGE;
         Part filePart = request.getPart("data");
-        
-            String xmlPath = request.getServletContext().getRealPath("/xml/plant.xml");
-            String xsdPath = request.getServletContext().getRealPath("/xml/plant.xsd");
-            this.writeFile(request, filePart);
-         boolean flag = true;
-        try{
-           
-            Main.validateXMLSchema(xmlPath,xsdPath);
-        }catch(Exception e){
-            flag= false;
+
+        String xmlPath = request.getServletContext().getRealPath("/xml/plant.xml");
+        String xsdPath = request.getServletContext().getRealPath("/xml/plant.xsd");
+        this.writeFile(request, filePart);
+        boolean flag = true;
+        try {
+
+            Main.validateXMLSchema(xmlPath, xsdPath);
+        } catch (Exception e) {
+            flag = false;
 //            url = CHECK_FILE_FAIL_PAGE;
         }
 //        url = CHECK_FILE_SUCCESS_PAGE;
-        if(flag){
+        if (flag) {
+            request.setAttribute("SUCCESS", "XML file validation!");
             url = CHECK_FILE_SUCCESS_PAGE;
         } else {
+            request.setAttribute("FAIL", "XML file invalidation!");
             url = CHECK_FILE_FAIL_PAGE;
         }
-        
-        System.out.println("xml file is valid"+ flag);
-        
+
+        System.out.println("xml file is valid" + flag);
+
         request.getRequestDispatcher(url).forward(request, response);
-        
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -128,7 +130,7 @@ public class CheckDataControler extends HttpServlet {
     }// </editor-fold>
 
     private void writeFile(HttpServletRequest request, Part filePart) throws IOException {
-        
+
         InputStream fileContent = filePart.getInputStream();
         String path = getServletContext().getRealPath("/xml/plant.xml");
         FileOutputStream fos = new FileOutputStream(path, false);
