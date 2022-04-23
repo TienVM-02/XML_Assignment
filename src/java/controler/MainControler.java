@@ -47,7 +47,7 @@ public class MainControler extends HttpServlet {
             if ("Check Data".equals(action)) {
                 url = CHECK_DATA;
             }
-            if ("LoadProduct".equals(action) || "search".equals(action)) {
+            if ("LoadProduct".equals(action) || "search".equals(action) || "reLoad".equals(action)) {
                 url = LOAD_DATA;
             }
             if ("update".equals(action)) {

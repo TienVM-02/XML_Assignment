@@ -29,9 +29,11 @@ import org.xml.sax.SAXException;
  */
 @WebServlet(name = "AddNewPlantControler", urlPatterns = {"/AddNewPlantControler"})
 public class AddNewPlantControler extends HttpServlet {
-         private final String LOAD_DATA = "LoadPlantControler";
+
+    private final String LOAD_DATA = "loadPlant.jsp";
     private final String ERROR_PAGE = "error.jsp";
     private final String NEW_PLANT_PAGE = "newplant.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,41 +46,39 @@ public class AddNewPlantControler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParserConfigurationException, SAXException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String xmlPath = request.getServletContext().getRealPath("/xml/plant.xml");
         String url = ERROR_PAGE;
         String action = request.getParameter("btnAction");
         try {
-             if ("CreatePage".equals(action)) {
+            if ("CreatePage".equals(action)) {
                 List<CategoriesDTO> categories = new CategoryDAO().getAll(xmlPath);
                 request.setAttribute("categories", categories);
                 url = NEW_PLANT_PAGE;
             } else {
                 String id = request.getParameter("id");
-               
+
                 String name = request.getParameter("name");
                 String dateCreate = request.getParameter("dateCreate");
                 String idCategory = request.getParameter("idCategory");
                 String des = request.getParameter("description");
                 Float price = Float.parseFloat(request.getParameter("price"));
-                plantDTO dto = new plantDTO(id, name, price, idCategory, dateCreate, des);
+                plantDTO dto = new plantDTO(id, name, price, des, idCategory, dateCreate);
                 PlantDAO dao = new PlantDAO();
-            try {
-                dao.newPlant(xmlPath, dto);
-            } catch (TransformerException ex) {
-                Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                url = NEW_PLANT_PAGE;
-                request.setAttribute("Success","Update success");
+                try {
+                    dao.newPlant(xmlPath, dto);
+                } catch (TransformerException ex) {
+                    Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+                }
+//                url = LOAD_DATA;
+                request.setAttribute("Success", "Update success");
             }
         } catch (Exception e) {
             System.out.println("error nè nhe");
-        }finally{
+        } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
-         
-           
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -93,13 +93,13 @@ public class AddNewPlantControler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             try {
-                 processRequest(request, response);
-             } catch (ParserConfigurationException ex) {
-                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (SAXException ex) {
-                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
-             }
+        try {
+            processRequest(request, response);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -113,13 +113,13 @@ public class AddNewPlantControler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             try {
-                 processRequest(request, response);
-             } catch (ParserConfigurationException ex) {
-                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (SAXException ex) {
-                 Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
-             }
+        try {
+            processRequest(request, response);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(AddNewPlantControler.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

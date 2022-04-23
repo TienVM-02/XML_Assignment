@@ -14,8 +14,8 @@
     </head>
     <body>
         <h1>CreatePlant</h1>
-        <h1>${Success}</h1>
-         <form>
+        <h1 style="color: green">${Success}</h1>
+         <form action="MainControler" method="POST">
             <input name="id" value="" placeholder="Enter id product..." /></br>
             <select name="idCategory">
                 <option>Choose category</option>
@@ -28,10 +28,10 @@
             <label>price:   </label><input name="price" value=""/></br>
             <label>description:   </label> </label><input name="description" value=""/></br>
             <label>date:   </label><input name="dateCreate" value=""/></br>
-            <button name="btnAction" value="Create">Add</button>
-             <a href="MainControler?btnAction=LoadProduct">Add New</a>
+            <!--<input type="hidden" name="searchValue" value="  "/>-->
+            <button name="btnAction" value="reLoad">Add</button>
+             <!--<a href="MainControler?btnAction=LoadProduct">Add New</a>-->
         </form>
 
-    </body>
     </body>
 </html>
