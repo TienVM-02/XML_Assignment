@@ -68,7 +68,7 @@ type="text/javascript"></script>
                                     <th>No.</th>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th style="width: 100px">Price $</th>
+                                    <th>Price $</th>
                                     <th>Description</th>
                                     <th>CateID</th>
                                     <th>Date Create</th>
@@ -84,7 +84,7 @@ type="text/javascript"></script>
                                     <input type="hidden" name="id" value="${plants.id}" />
                                     <td>${plants.id}</td>
                                     <td><input name="name" value="${plants.name}" /></td>
-                                    <td>$ <input style="width: 55px" name="price" value="${plants.price}" /></td>
+                                    <td><input style="width: 70px" name="price" value="${plants.price}" /></td>
                                     <td><input name="description" value="${plants.description}" /></td>
                                     <td><input name="idCate" value="${plants.cateID}" /></td>
                                     <td><input name="dateCreate" value="${plants.createDate}" /> </td>

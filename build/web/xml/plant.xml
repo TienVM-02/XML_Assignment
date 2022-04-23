@@ -77,13 +77,7 @@
             <createDate>2022-06-11</createDate>
             <cateId>CK01</cateId>
         </plant>
-        <plant id="11">
-            <name>sen da</name>
-            <price>20.5</price>
-            <description>Mit thai thom ngon</description>
-            <createDate>2022-06-11</createDate>
-            <cateId>CK01</cateId>
-        </plant>
+        
         <plant id="12">
             <name>mit thai</name>
             <price>20.5</price>
@@ -91,7 +85,43 @@
             <createDate>2022-06-11</createDate>
             <cateId>CK01</cateId>
         </plant>
-    <plant id="111"><name>ca chua</name><price>10.2</price><description>AT01</description><createDate>ca chua bi</createDate><cateId>2022-04-22</cateId></plant><plant id="111"><name>ca chua</name><price>10.2</price><description>AT01</description><createDate>ca chua bi</createDate><cateId>2022-04-22</cateId></plant><plant id="111"><name>ca chua</name><price>10.2</price><description>AT01</description><createDate>ca chua bi</createDate><cateId>2022-04-22</cateId></plant></plants>
+        
+        <plant id="11">
+            <name>check</name>
+            <price>12.0</price>
+            <description>date check </description>
+            <createDate>2022-04-23</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="22">
+            <name>check</name>
+            <price>12.0</price>
+            <description>date check </description>
+            <createDate>2022-04-23</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="22">
+            <name>check</name>
+            <price>12.0</price>
+            <description>date check </description>
+            <createDate>2022-04-23</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="222">
+            <name>check</name>
+            <price>12.0</price>
+            <description>date check </description>
+            <createDate>2022-04-23</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+        <plant id="444">
+            <name>check</name>
+            <price>12.0</price>
+            <description>date check 12</description>
+            <createDate>2022-04-23</createDate>
+            <cateId>AT01</cateId>
+        </plant>
+    <plant id="985"><name>uhuhu</name><price>13.0</price><description>chache</description><createDate>2022-04-23</createDate><cateId>AT01</cateId></plant><plant id="442"><name>banana</name><price>12.0</price><description>yellow banana</description><createDate>2022-04-23</createDate><cateId>AT01</cateId></plant><plant id="221"><name>rau muong</name><price>122.0</price><description>check </description><createDate>2022-04-23</createDate><cateId>RM01</cateId></plant><plant id="12"><name>always check</name><price>12.0</price><description>kaka</description><createDate>2022-04-23</createDate><cateId>CK01</cateId></plant></plants>
     <categories>
         <category cateId="AT01">
             <name>Cay an trai </name>
