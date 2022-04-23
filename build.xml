@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.Assisgment_XML_fixver-->
-<project name="XML_Assignment_v2" default="default" basedir=".">
-    <description>Builds, tests, and runs the project XML_Assignment_v2.</description>
+<project name="XML_Assignment_v1" default="default" basedir=".">
+    <description>Builds, tests, and runs the project XML_Assignment_v1.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

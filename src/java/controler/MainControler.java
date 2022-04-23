@@ -23,7 +23,7 @@ public class MainControler extends HttpServlet {
     private final String CHECK_DATA = "CheckDataControler";
     private final String LOAD_DATA = "LoadPlantControler";
     private final String UPDATE_DATA = "UpdatePlantControler";
-    private final String CREATE_DATA = "AddNewPlantControler";
+    private final String CREATE_DATA = "AddnewPlantControler";
     private final String REMOVE_DATA = "RemovePlantControler";
 
     /**
@@ -47,7 +47,7 @@ public class MainControler extends HttpServlet {
             if ("Check Data".equals(action)) {
                 url = CHECK_DATA;
             }
-            if ("LoadProduct".equals(action) || "search".equals(action) || "reLoad".equals(action)) {
+            if ("LoadProduct".equals(action) || "search".equals(action)) {
                 url = LOAD_DATA;
             }
             if ("update".equals(action)) {

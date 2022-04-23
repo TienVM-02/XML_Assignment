@@ -1,45 +1,40 @@
 <!DOCTYPE html>
-
-
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Plant</title>
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
     <div class="header">
         <p class="title">Plant Management</p>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="centerBtn">
-                    <p class="task">Menu</p>
+    <form class="addForm" action="MainControler" method="POST">
+        <h2>Add plant</h2>
+        <h3 style="color: green">${Success}</h3>
+        <label>Plant ID: </label>
+        <input class="inputInfo" type="text" name="id" value="" placeholder="ID plant..." />
+        <label>Category ID: </label>
+        <select class="inputInfo" name="idCategory">
+            <option>Choose category</option>
+            <c:forEach var="category" items="${categories}">
+                <option value="${category.id}">${category.name}</option>
+            </c:forEach>
+        </select>
+        </br>
+        <label>Name: </label>
+        <input class="inputInfo" type="text" name="name" value="" placeholder="Plant name..." /></br>
+        <label>Price: </label>
+        <input class="inputInfo" type="text" name="price" value="" placeholder="Price..." /></br>
+        <label>Description: </label>
+        <input class="inputInfo" type="text" name="description" value="" placeholder="Description..." /></br>
+        <button class="addBtn" name="btnAction" value="Create">Add</button>
+        <a style="margin-top: 25px; font-size: 18px;" href="MainControler?btnAction=LoadProduct">Back to plant list.</a>
+    </form>
 
-                    <form method="post" action="MainControler">
-                        <input type="submit" name="btnAction" value="Generate Data" />
-                    </form>
-                    <div>
-                        <form method="post" action="CheckDataControler" enctype="multipart/form-data">
-                            <input class="upFile" name="data" type="file" />
-                            <input type="submit" name="btnAction" value="Check Data" />
-                        </form>
-                    </div>
-                    <div style="margin-top: 10px">
-                        <form method="get" action="MainControler">
-                            <input type="submit" name="btnAction" value="LoadProduct" />
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

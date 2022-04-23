@@ -18,6 +18,8 @@ public class plantDTO {
     String cateID;
     String description;
     String createDate;
+    
+    
 
     public plantDTO(String id, String name, float price, String description, String cateID, String createDate) {
         this.id = id;
@@ -28,12 +30,20 @@ public class plantDTO {
         this.createDate = createDate;
     }
     
-    public plantDTO(String id, String name, float price, String cateID, String createDate) {
+//    public plantDTO(String id, String name, float price, String cateID, String createDate) {
+//        this.id = id;
+//        this.name = name;
+//        this.price = price;
+//        this.cateID = cateID;
+//        this.createDate = createDate;
+//    }
+
+    public plantDTO(String id, String name, float price, String description, String cateID) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.cateID = cateID;
-        this.createDate = createDate;
+        this.description = description;
     }
 
     public String getDescription() {
