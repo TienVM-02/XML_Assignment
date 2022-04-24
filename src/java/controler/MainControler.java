@@ -25,6 +25,7 @@ public class MainControler extends HttpServlet {
     private final String UPDATE_DATA = "UpdatePlantControler";
     private final String CREATE_DATA = "AddnewPlantControler";
     private final String REMOVE_DATA = "RemovePlantControler";
+    private final String CONVERT_DATA = "ConvertToXLSX";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -56,6 +57,8 @@ public class MainControler extends HttpServlet {
                 url = CREATE_DATA;
             }if("deletePlant".equals(action)){
                 url = REMOVE_DATA;
+            }if ("ImportXMLToXLSX".equals(action)) {
+                url = CONVERT_DATA;
             }
 
         } catch (Exception e) {

@@ -193,9 +193,6 @@ public class PlantDAO {
         plant.appendChild(des);
         
         Element dateCreate = doc.createElement("createDate");
-//        LocalDate date = LocalDate.now();
-//        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-//        String dateStr = dateFormat.format(date);
         LocalDate date = LocalDate.now();
         DateTimeFormatter dateFormat = DateTimeFormatter.ISO_LOCAL_DATE;
         String dateStr = date.format(dateFormat);
