@@ -1,7 +1,11 @@
 package ultil;
 
+import dto.CategoriesDTO;
+import dto.plantDTO;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -21,6 +25,15 @@ import javax.xml.transform.stream.StreamSource;
 
 
 import javax.xml.validation.SchemaFactory;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class Main {
@@ -198,5 +211,100 @@ public class Main {
         SchemaFactory sc = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         ((sc.newSchema(new File(validationFile))).newValidator()).validate(new StreamSource((new File(xmlFile))));
 
+    }
+    
+    public static Workbook exportXmlToExcel(String pathSave, List<plantDTO> plant, List<CategoriesDTO> categories) throws FileNotFoundException, IOException {
+        Workbook workbook = new XSSFWorkbook();
+
+        Sheet sheet = workbook.createSheet("plants");
+        sheet.setColumnWidth(0, 3000);
+        sheet.setColumnWidth(1, 4000);
+
+        Row header = sheet.createRow(0);
+
+        CellStyle headerStyle = workbook.createCellStyle();
+        headerStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+        headerStyle.setFillPattern(FillPatternType.DIAMONDS);
+
+        XSSFFont font = ((XSSFWorkbook) workbook).createFont();
+        font.setFontName("Arial");
+        font.setFontHeightInPoints((short) 13);
+        font.setBold(true);
+        headerStyle.setFont(font);
+
+        Cell headerCell = header.createCell(0);
+        headerCell.setCellValue("No");
+        headerCell.setCellStyle(headerStyle);
+
+        headerCell = header.createCell(1);
+        headerCell.setCellValue("ID");
+        headerCell.setCellStyle(headerStyle);
+
+        headerCell = header.createCell(2);
+        headerCell.setCellValue("Name");
+        headerCell.setCellStyle(headerStyle);
+
+        headerCell = header.createCell(3);
+        headerCell.setCellValue("Category");
+        headerCell.setCellStyle(headerStyle);
+        
+        headerCell = header.createCell(4);
+        headerCell.setCellValue("Description");
+        headerCell.setCellStyle(headerStyle);
+
+        headerCell = header.createCell(5);
+        headerCell.setCellValue("Price");
+        headerCell.setCellStyle(headerStyle);
+
+        headerCell = header.createCell(6);
+        headerCell.setCellValue("Create Date");
+        headerCell.setCellStyle(headerStyle);
+
+
+        //body
+        CellStyle style = workbook.createCellStyle();
+        style.setWrapText(false);
+        int length = plant.size();
+        for (int i = 0; i < length; i++) {
+            Row row = sheet.createRow(i + 1);
+            Cell cell = row.createCell(0);
+            cell.setCellValue(i + 1);
+            cell.setCellStyle(style);
+
+            plantDTO plant1 = plant.get(i);
+            cell = row.createCell(1);
+            cell.setCellValue(plant1.getId());
+            cell.setCellStyle(style);
+
+            String category = "";
+            for (CategoriesDTO category1 : categories) {
+                if (category1.getId().equals(plant.get(i).getCateID())) {
+                    category = category1.getName();
+                }
+            }
+
+            cell = row.createCell(2);
+            cell.setCellValue(plant1.getName());
+            cell.setCellStyle(style);
+            
+            cell = row.createCell(3);
+            cell.setCellValue(category);
+            cell.setCellStyle(style);
+            
+            cell = row.createCell(4);
+            cell.setCellValue(plant1.getDescription());
+            cell.setCellStyle(style);
+        
+            cell = row.createCell(5);
+            cell.setCellValue("$" + plant1.getPrice());
+            cell.setCellStyle(style);
+
+            cell = row.createCell(6);
+            cell.setCellValue(plant1.getCreateDate());
+            cell.setCellStyle(style);
+
+        }
+
+        return workbook;
     }
 }

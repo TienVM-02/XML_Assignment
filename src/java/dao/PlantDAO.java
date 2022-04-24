@@ -9,7 +9,12 @@ import dto.plantDTO;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.*;
@@ -91,25 +96,25 @@ public class PlantDAO {
 
                     String id = element.getAttribute("id");
                     Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                    String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                     String description = element.getElementsByTagName("description").item(0).getTextContent();
+                    String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                     plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
 
                 } else if (idCategory.equals(category)) {
                     String name = element.getElementsByTagName("name").item(0).getTextContent();
 
-                    if (name.indexOf(filter) > 0) {
+                    if (name.indexOf(filter) >= 0) {
                         String id = element.getAttribute("id");
                         Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         String description = element.getElementsByTagName("description").item(0).getTextContent();
+                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
                     }
                     if (filter == "") {
                         String id = element.getAttribute("id");
                         Float price = Float.parseFloat(element.getElementsByTagName("price").item(0).getTextContent());
-                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         String description = element.getElementsByTagName("description").item(0).getTextContent();
+                        String dateCreate = element.getElementsByTagName("createDate").item(0).getTextContent();
                         plant.add(new plantDTO(id, name, price, description, idCategory, dateCreate));
                     }
                 }
@@ -186,9 +191,15 @@ public class PlantDAO {
         Element des = doc.createElement("description");
         des.setTextContent(dto.getDescription());
         plant.appendChild(des);
+        
         Element dateCreate = doc.createElement("createDate");
-        dateCreate.setTextContent(dto.getCreateDate());
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ISO_LOCAL_DATE;
+        String dateStr = date.format(dateFormat);
+        
+        dateCreate.setTextContent(dateStr);
         plant.appendChild(dateCreate);
+        
         Element idCate = doc.createElement("cateId");
         idCate.setTextContent(dto.getCateID());
         plant.appendChild(idCate);
@@ -250,5 +261,14 @@ public class PlantDAO {
         }
         return null;
     }
-
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter dateFormat = DateTimeFormatter.ISO_LOCAL_DATE;
+        String dateStr = date.format(dateFormat);
+        System.out.println(dateStr);
+        
+        plantDTO pl = new plantDTO("444", "check", 12, "AT01", "date check 12");
+        PlantDAO dao = new PlantDAO();
+        dao.newPlant("D:\\CN7_Block3w\\PRX301\\XML_Assignment\\web\\xml\\plant.xml", pl);
+    }
 }
