@@ -41,7 +41,7 @@
         <label>Description: </label>
         <input class="inputInfo" type="text" name="description" value="" placeholder="Description..." /></br>
         <button class="addBtn" name="btnAction" value="Create">Add</button>
-        <a style="margin-top: 25px; font-size: 18px;" href="loadPlant.jsp">Back to plant list.</a>
+        <a style="margin-top: 25px; font-size: 18px;" href="MainControler?btnAction=LoadProduct">Back to plant list.</a>
     </form>
 
 </body>

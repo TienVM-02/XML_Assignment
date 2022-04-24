@@ -55,8 +55,7 @@ type="text/javascript"></script>
                             <button class="btnSearch" name="btnAction" value="search">Search</button>
                             <button class="btnAdd" name="btnAction" value="CreatePage">Add +</button>
                             <button class="btnAdd" name="btnAction" value="ImportXMLToXLSX">Export</button>
-                            <!--<a href="MainControler?btnAction=ImportXMLToXLSX">Export</a>-->
-                            <!--<a href="MainControler?btnAction=CreatePage">Add New</a>-->
+
                         </form>
                     </div>
                     <!--<a href="MainControler?btnAction=addNew">Add New</a>-->
